@@ -1,4 +1,4 @@
-package com.toxcustom.movielibrary;
+package pl.toxcustom.movielibrary;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

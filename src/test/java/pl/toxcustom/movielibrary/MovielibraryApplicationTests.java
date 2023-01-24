@@ -1,4 +1,4 @@
-package com.toxcustom.movielibrary;
+package pl.toxcustom.movielibrary;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
