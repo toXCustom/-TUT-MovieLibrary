@@ -1,30 +1,29 @@
 package pl.toxcustom.movielibrary;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/movies")
 public class MovieController {
 
     @Autowired
     MovieRepository movieRepository;
 
-    @GetMapping("/test")
-    public int test() {
-        return 1;
-    }
-
-    @GetMapping("/movies")
+    @GetMapping("")
     public List<Movie> getAll() {
         return movieRepository.getAll();
     }
 
-    @GetMapping("/movies/{id}")
+    @GetMapping("/{id}")
     public Movie getById(@PathVariable("id") int id) {
         return movieRepository.getById(id);
+    }
+
+    @PostMapping("")
+    public int add(@RequestBody List<Movie> movies) {
+        return movieRepository.save(movies);
     }
 }
